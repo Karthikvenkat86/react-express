@@ -1,8 +1,8 @@
-Integrated project with React * Node ( Express js ) * Webpack
+Integrated project with React * Node ( Express js ) * Webpack * JADE * EJS
 ======
 ***
 
-Boilerplate Project for Rapid Application Development with React, express , webpack 
+Boilerplate Project for Rapid Application Development with React, express , webpack ,JADE ,EJS Templates
 
 ---
 
