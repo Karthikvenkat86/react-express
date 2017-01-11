@@ -1,9 +1,25 @@
+var express = require('express');
+var router = express.Router();
 
-exports.defaultURL = function(req, res){
-  res.render('index', { name: 'John' });
-};
+/* GET home page. */
+router.get('/', function(req, res) {
+  res.render('index', { title: 'Main' });
+});
 
-exports.sendOne = function(req, res){
-  res.render('pageOne');
-};
+router.get('/google', function(req, res) {
+  res.render('googleIndex', { title: 'Main' });
+});
 
+
+router.get('/windows', function(req, res) {
+  res.render('microsoftIndex', { title: 'Main' });
+});
+
+
+router.get('/apple', function(req, res) {
+  res.render('appleIndex', { title: 'Main' });
+});
+
+
+
+module.exports = router;

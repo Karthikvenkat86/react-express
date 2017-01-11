@@ -1,43 +1,14 @@
-var config = {
-   entry: './app.js',
-	
-   output: {
-      path:'./',
-      filename: 'final.js',
-   },
-	
-   devServer: {
-      inline: true,
-      port: 8080
-   },
-	node: {
-      fs: "empty",
-      net: 'empty',
-      tls: 'empty',
-      dns: 'empty'
-   },
-   target: 'node',
-   module: {
-
-      loaders: [
-         {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-				
-            query: {
-               presets: ['es2015', 'react']
-            }
-         },
-         {
-            loader: 'json-loader',
-            test: /\.json$/
-        },
-        { test: /\.js?$/, exclude: /node_modules/, loader: 'babel'},
-        { test: /\.jsx$/, exclude: /node_modules/, loader: 'babel'},
-        { test: /\.css$/, exclude: /static/, loader: 'style!css'}
-      ]
-   }
-}
-
-module.exports = config;
+module.exports = {
+  cache: true,
+  entry:  './src/index.jsx',
+  output: {
+    path: 'public/build',
+    filename: '[name].js'
+  },
+  module: {
+    loaders: [
+      {test: /\.jsx$/, loader: 'babel', exclude: /(node_modules|bower_components)/, query: { presets: ['react', 'es2015'] }},
+      {test: /\.js$/, loader: 'babel', exclude: /(node_modules|bower_components)/, query: { presets: ['react', 'es2015'] }},
+    ]
+  }
+};
